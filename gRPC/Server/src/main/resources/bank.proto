@@ -1,0 +1,45 @@
+syntax = "proto3"; /* default is proto2 */
+
+option java_package = "proto";
+
+message logInMessage {
+    string username = 1;
+    string password = 2;
+}
+
+message logInReply {
+    sint32 userID = 1;
+}
+
+message balanceMessage {
+    sint32 userID = 1;
+}
+
+message balanceReply {
+    sint32 balance = 1;
+}
+
+message withdrawMessage {
+    sint32 userID = 1;
+    sint32 money = 2;
+}
+
+message withdrawReply {
+    bool actionSuccessful = 1;
+}
+
+message depositMessage {
+    sint32 userID = 1;
+    sint32 money = 2;
+}
+
+message depositReply {
+    bool actionSuccessful = 1;
+}
+
+service BankInterface {
+    rpc logIn (logInMessage) returns (logInReply);
+    rpc requestBalance (balanceMessage) returns (balanceReply);
+    rpc withdraw (withdrawMessage) returns (withdrawReply);
+    rpc deposit (depositMessage) returns (depositReply);
+}
