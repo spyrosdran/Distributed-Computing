@@ -1,6 +1,6 @@
 
 ## Distributed Computing
-✨ This repository is dedicated to implementing a very simple bank system, which provides the following functionality:
+✨ This repository is dedicated to implementing a very simple client - server bank system, which provides the following functionality:
 
  - Log In
  - Log Out
